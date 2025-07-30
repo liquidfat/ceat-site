@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>ceat</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  
+    <meta charset="UTF-8">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Christopher Keatinge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    
+<body>
+    
+    <header class="header">
+      <h1>ceat.fun</h1>
+        <ul class="nav">
+          <li><a href="">index</a></li>
+          <li><a href="">gallery</a></li>
+          <li><a href="">contact</a></li>
+          <li><a href="">radio</a></li>
+        </ul>
+    </header> 
+  
+    
+    <div class="image-container">
+      <img id="randomImage" src="" alt="Random Image">
+    </div>
+    
+    <script>
+    const images = [
+      'images/gif1.gif',
+      'images/gif2.gif',
+      'images/gif3.gif',
+      'images/gif4.gif',
+      'images/gif5.gif',
+    ];
+
+    const lastImage = localStorage.getItem('lastImage');
+    let newImage = null;
+
+    // Keep picking a random image until it's different from the last one
+    do {
+      newImage = images[Math.floor(Math.random() * images.length)];
+    } while (images.length > 1 && newImage === lastImage);
+
+    // Set the new image
+    document.getElementById('randomImage').src = newImage;
+
+    // Store it for next page load
+    localStorage.setItem('lastImage', newImage);
+  </script>
+   
+    
+</body>
+    
+</html>

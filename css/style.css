@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {background-color: black
+}
+
+/*HEADER AND NAV BAR*/
+header{
+    margin: 20px 0px 0px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  margin-left: 50px;
+  gap: 20px;
+}
+
+.nav li a {
+  font-family: "elza", sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+h1{
+    font-family: "elza", sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
+/*HOME GIFS*/
+.image-container {
+    width: 80%;
+    margin: 9% 10% 0% 10%;
+    overflow: hidden;        /* This hides any part of the image that overflows */
+    position: relative;
+  }
+
+#randomImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* This makes sure the image fills the container and crops as needed */
+    object-position: center; /* Keep the image centered */
+    display: block;
+ }
