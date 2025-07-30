@@ -17,6 +17,7 @@ header{
 .header {
   display: flex;
   align-items: baseline;
+  z-index: 1000;
 }
 
 .nav {
@@ -24,6 +25,7 @@ header{
   display: flex;
   margin-left: 50px;
   gap: 20px;
+  z-index: 1000;
 }
 
 .nav li a {
@@ -33,6 +35,47 @@ header{
   color: white;
   font-weight: bold;
 }
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+    z-index: 1001;
+}
+
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #ff0077;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 20px;
+  }
+
+  .header {
+    position: relative;
+  }
+}
+
 
 h1{
     font-family: "elza", sans-serif;
@@ -46,6 +89,7 @@ h1{
     margin: 9% 10% 0% 10%;
     overflow: hidden;        /* This hides any part of the image that overflows */
     position: relative;
+    z-index: 999;
   }
 
 #randomImage {
@@ -55,3 +99,4 @@ h1{
     object-position: center; /* Keep the image centered */
     display: block;
  }
+

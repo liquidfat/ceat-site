@@ -14,15 +14,22 @@
     
 <body>
     
-    <header class="header">
-      <h1>ceat.fun</h1>
-        <ul class="nav">
-          <li><a href="">index</a></li>
-          <li><a href="">gallery</a></li>
-          <li><a href="">contact</a></li>
-          <li><a href="">radio</a></li>
-        </ul>
-    </header> 
+  <header class="header">
+    <h1>ceat.fun</h1>
+
+    <!-- Hamburger button -->
+    <button class="hamburger" onclick="toggleMenu()">
+      ☰
+    </button>
+
+    <!-- Navigation links -->
+    <ul class="nav" id="navMenu">
+      <li><a href="">index</a></li>
+      <li><a href="">gallery</a></li>
+      <li><a href="">contact</a></li>
+      <li><a href="">radio</a></li>
+    </ul>
+  </header>
   
     
     <div class="image-container">
@@ -51,6 +58,12 @@
 
     // Store it for next page load
     localStorage.setItem('lastImage', newImage);
+      
+      
+    function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    nav.classList.toggle('active');
+  }
   </script>
    
     
