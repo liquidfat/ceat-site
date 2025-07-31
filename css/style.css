@@ -9,9 +9,37 @@ box-sizing: border-box;
 body {background-color: black
 }
 
+img{
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+iframe{
+  display: block;
+  margin: auto;
+  margin-bottom: 30px; 
+  width: 50%;
+  height:400px;
+}
+
+h1{
+    font-family: "elza", sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
+p{
+  font-family: 'Times New Roman';
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
 /*HEADER AND NAV BAR*/
 header{
-    margin: 20px 0px 0px 40px;
+    margin: 20px 0px 30px 40px;
 }
 
 .header {
@@ -46,7 +74,6 @@ header{
     z-index: 1001;
 }
 
-
 @media (max-width: 768px) {
   .nav {
     display: none;
@@ -77,12 +104,6 @@ header{
 }
 
 
-h1{
-    font-family: "elza", sans-serif;
-    font-size: 50px;
-    color: white;
-}
-
 /*HOME GIFS*/
 .image-container {
     width: 80%;
@@ -99,4 +120,29 @@ h1{
     object-position: center; /* Keep the image centered */
     display: block;
  }
+
+/*Button table*/
+table {
+      border-collapse: collapse;
+      width: 25%;
+      margin: 20px auto;
+    }
+td {
+    padding: 10px;
+    text-align: center;
+    }
+#itemtable button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #a7a7a7;
+    color: blue;
+    text-decoration: underline;
+    }
+
+#itemtable button:hover {
+    color: #ff0077;
+    }
+
 
