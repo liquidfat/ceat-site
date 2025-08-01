@@ -24,6 +24,10 @@ iframe{
   height:50vw;
 }
 
+a{
+  color: #0013ff
+}
+
 h1{
     font-family: "elza", sans-serif;
     font-size: 50px;
