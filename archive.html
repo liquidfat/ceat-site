@@ -27,6 +27,17 @@
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
       }
+      
+      function openLightbox(imgElement) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = imgElement.src;
+      lightbox.style.display = "flex";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
     </script>  
     
     <!-- Navigation links -->
@@ -42,11 +53,41 @@
       <li><a href="gallery.html">photos</a></li>
       <li><a href="video.html">video</a></li>
       <li><a href="archive.html">archive</a></li>
-    </ul>
+  </ul>
    
-  <p style="text-align: center; color:white ">UNDER CONSTRUCTION</p>
+  <p>my collection of images - click images to enlarge</p>
+  
+   <div class="image-grid">
+    <img src="images/archive/bladee.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/ancient.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/casino.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/4chan.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/chloe.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/craigslist.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/digdug.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/dungeon.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/fable.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/fsr.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/gentlemen.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/gun.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/tekken.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/stray.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/tears.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/winter.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/sovcartoon.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/ruins.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/mmo.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/picasso.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/replica.jpg" onclick="openLightbox(this)">
+    <img src="images/archive/whisper.jpg" onclick="openLightbox(this)">
+     
+  </div> 
     
-  <img src="images/image4.jpg">
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded">
+  </div>
+     
+
     
 </body>
     

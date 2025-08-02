@@ -129,7 +129,7 @@ header{
 /*HOME GIFS*/
 .image-container {
     width: 80%;
-    margin: 9% 10% 0% 10%;
+    margin: 7% 10% 0% 10%;
     overflow: hidden;        /* This hides any part of the image that overflows */
     position: relative;
     z-index: 999;
@@ -191,16 +191,15 @@ td {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.85);
-  
   align-items: center;
   justify-content: center;
-
-  padding: 0; /* prevent scroll from padding */
+  padding: 0; 
   margin: 0;
 }
 
 .lightbox img {
   display: block;
+  width: 80%;
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
