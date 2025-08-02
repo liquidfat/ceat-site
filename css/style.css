@@ -25,7 +25,12 @@ iframe{
 }
 
 a{
-  color: #0013ff
+  color: #0013ff;
+}
+
+.returnlink{
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 h1{
@@ -53,6 +58,7 @@ header{
   z-index: 1000;
 }
 
+/*NAVIGATION*/
 .nav {
   list-style: none;
   display: flex;
@@ -61,7 +67,18 @@ header{
   z-index: 1000;
 }
 
-.nav li a {
+.gallnav{
+  list-style: none;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.nav li a,
+.gallnav li a{
   font-family: "elza", sans-serif;
   text-decoration: none;
   font-size: 20px;
@@ -126,7 +143,7 @@ header{
     display: block;
  }
 
-/*Button table*/
+/*INDEX BUTTON TABLE*/
 table {
       border-collapse: collapse;
       width: 25%;
@@ -151,3 +168,42 @@ td {
     }
 
 
+/*IMAGE GRID*/
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  
+  align-items: center;
+  justify-content: center;
+
+  padding: 0; /* prevent scroll from padding */
+  margin: 0;
+}
+
+.lightbox img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}

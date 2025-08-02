@@ -27,6 +27,17 @@
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
       }
+      
+      function openLightbox(imgElement) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightboxImg.src = imgElement.src;
+    lightbox.style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
     </script>  
     
     <!-- Navigation links -->
@@ -37,11 +48,39 @@
       <li><a href="radio.html">radio</a></li>
     </ul>
   </header>
-   
-  <p style="text-align: center; color:white ">UNDER CONSTRUCTION</p>
-    
-  <img src="images/image4.jpg">
-    
+  
+  <ul class="gallnav" id="navMenu">
+      <li><a href="gallery.html">photos</a></li>
+      <li><a href="video.html">video</a></li>
+      <li><a href="archive.html">archive</a></li>
+  </ul>   
+  
+  <p>click photos to enlarge</p>
+  
+  
+   <div class="image-grid">
+    <img src="images/photos/web%20berry.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/98.jpg" alt="Image 2" onclick="openLightbox(this)">
+    <img src="images/photos/massage.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/ragdoll.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/slats.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/pipes.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/night.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/crows.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/day.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/mcdonalds%20sunrise.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/smears.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/carpark.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/ben.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/ifeel.jpg" onclick="openLightbox(this)">
+    <img src="images/photos/spikes.jpg" onclick="openLightbox(this)">
+  </div>
+  
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded">
+  </div>
+  
+  
 </body>
     
 </html>
