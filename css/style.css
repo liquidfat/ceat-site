@@ -207,7 +207,11 @@ td {
   padding: 0;
 }
 
-/*IMAGE GRID*/
-.player-footer{
-  background-color: blue;
+/*RADIO*/
+.row{
+  width: 100%;
+}
+
+.col2{
+  width: 80%;
 }
