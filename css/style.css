@@ -207,36 +207,3 @@ td {
   padding: 0;
 }
 
-/*RADIO*/
-/* Target the overall player container */
-.cstrEmbed {
-  max-width: 400px;
-  margin: 20px auto;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Remove Caster.fm links (if not needed) */
-.cstrEmbed a {
-  display: none !important;
-}
-
-/* Example of deeper styling — inspect the DOM to refine this */
-.cstrEmbed * {
-  font-family: 'Arial', sans-serif !important;
-  color: #fff !important;
-}
-
-/* Example: override background */
-.cstrEmbed .player-wrapper {
-  background-color: #1e1e1e !important;
-}
-
-/* Example: override button color */
-.cstrEmbed button {
-  background-color: #e81e4d !important;
-  color: white !important;
-  border-radius: 6px !important;
-  border: none !important;
-}

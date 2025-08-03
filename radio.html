@@ -42,10 +42,18 @@
 
   <img src="images/archive/digdug.jpg">  
   
-  <div data-type="newStreamPlayer" data-publicToken="e3056f6f-039e-438c-b24c-a9bdcf5f9bbc" data-theme="light" data-color="e81e4d" data-channelId="9f8bba92-b48c-46d8-8294-7eb27323857b" data-rendered="false" class="cstrEmbed"><a href="https://www.caster.fm">Shoutcast Hosting</a> <a href="https://www.caster.fm">Stream Hosting</a>
-    <a href="https://www.caster.fm">Radio Server Hosting</a></div>
-  <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
-  
+
+  <div id="customPlayer">
+  <button id="playBtn">Play</button>
+  <button id="pauseBtn">Pause</button>
+  <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+</div>
+
+<audio id="radioStream" preload="none">
+  <source src="cloud.caster.fm/player/9f8bba92-b48c-46d8-8294-7eb27323857b" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
   
 </body>
     
