@@ -209,9 +209,19 @@ td {
 
 /*RADIO*/
 .row{
+  display: flex;
   width: 100%;
 }
 
-.col2{
-  width: 80%;
+.chat{
+  width: 50%;
+  height: 300px;
+  margin: 30px;
+}
+
+.radio{
+  width: 50%;
+  height: 300px;
+  margin: 30px;
+  
 }
