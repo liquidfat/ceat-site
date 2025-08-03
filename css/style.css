@@ -217,6 +217,12 @@ td {
   width: 50%;
   height: 300px;
   margin: 30px;
+  overflow: hidden;
+}
+
+.chat-inner {
+  height: 100%;
+  overflow: auto;
 }
 
 .radio{
