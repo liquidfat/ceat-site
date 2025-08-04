@@ -219,15 +219,11 @@ td {
 }
 
 .chat{
-  flex: 1 1 50%;
-  width: 50%;
+  width: 400px;
   height: 600px;
   margin: 30px;
 }
 
-.chat-inner {
-  height: 100%;
-}
 
 .radio{
   width: 100%;
