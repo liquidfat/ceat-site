@@ -100,7 +100,7 @@ header{
   .nav {
     display: none;
     flex-direction: column;
-    background-color: #ff0077;
+    background-color: #ffffff;
     position: absolute;
     top: 60px;
     right: 10px;
