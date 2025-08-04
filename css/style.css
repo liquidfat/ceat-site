@@ -224,8 +224,11 @@ td {
   margin: 30px;
 }
 
-
 .radio{
   width: 100%;
   margin: 30px;
+}
+
+.radiogif{
+  width: 100%; 
 }
