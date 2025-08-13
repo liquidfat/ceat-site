@@ -224,6 +224,10 @@ td {
   margin: 30px;
 }
 
+.chat iframe {
+  height: 100%;
+}
+
 .radio{
   width: 100%;
   margin: 30px;
