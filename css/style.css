@@ -237,9 +237,31 @@ td {
   width: 100%; 
 }
 
+/*RADIO FOR MOBILE*/
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* stack vertically */
+  }
+
+  .col2 {
+    width: 100%; /* full width for each */
+    flex-direction: column; /* stack inside each col if needed */
+  }
+
+  .chat,
+  .radio {
+    margin: 10px auto; /* smaller margins for mobile */
+    height: 400px; /* prevent fixed height issues */
+  }
+
+  .radiogif {
+    Width: 100%;
+    height: auto;
+  }
+}
+
 /*CONTACT*/
 .contact{
   width: 80%;
   border-color: white;
-  
 }
