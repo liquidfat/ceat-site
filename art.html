@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>ceat</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  
+    <meta charset="UTF-8">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Christopher Keatinge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    
+<body>
+    
+  <header class="header">
+    <h1>ceat.fun</h1>
+
+    <!-- Hamburger button -->
+    <button class="hamburger" onclick="toggleMenu()">
+      ☰
+    </button>
+
+    <script>
+      function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+      }
+      
+      let currentIndex = 0; // track which image is open
+      let images = []; // store all gallery images
+      
+      function openLightbox(imgElement) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = imgElement.src;
+      lightbox.style.display = "flex";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    </script>  
+    
+    <!-- Navigation links -->
+    <ul class="nav" id="navMenu">
+      <li><a href="index.html">index</a></li>
+      <li><a href="gallery.html" style="color: #ff0077;">gallery</a></li>
+      <li><a href="radio.html">radio</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </header>
+  
+  <ul class="gallnav" id="navMenu">
+      <li><a href="gallery.html">photos</a></li>
+      <li><a href="art.html" style="color: #ff0077;">art</a></li>
+      <li><a href="video.html">video</a></li>
+      <li><a href="archive.html">archive</a></li>
+  </ul>   
+  
+  <p>click art to enlarge</p>
+  
+  
+   <div class="image-grid">
+    <img src="https://i.postimg.cc/05nkp6Bv/2025-05-16-103840.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/9MjmBy2m/2025-05-13-024371-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/66MK8k85/IMG-20240809-195652-135.webp" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/SRSmBqjH/2025-05-15-005060-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/t4Y4RXDj/2025-03-03-100714-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/05Xgk74z/IMG-20241206-145216239.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/90Qjxpnh/IMG-20240803-113221-978.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/ZqzzkZMj/IMG-20240814-203954-776.webp" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/QNfqvbyy/459068592-879667787381933-5401366752501244438-n.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/J0n93hs7/odst.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/8cj0JnYj/unit1-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/qqSZ8xfQ/stalker-stats.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/wMgB9L4f/2025-03-03-095187-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/ZRkRD18h/2024-04-03-035438-1.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/PJR0SkDW/IMG-20250217-214034999-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/bNZ7ssX3/inland.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/htdR3hpf/IMG-20240809-195652-167.webp" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/FK48WpYB/Screenshot-20240804-235416.png" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/nVGz0SM6/2025-03-03-095798-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/mr9ZM80p/2025-03-03-105184-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/pL4Xpg1n/2025-03-03-100820-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/zXfJpJsg/IMG-20240403-173936-853.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/rsZ27rBt/IMG-20240809-195652-102.webp" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/PxtGxyhw/IMG-20240814-203954-889.webp" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/cLYPB2L3/raven.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/63L9bT6d/2025-05-14-100335-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/wMgB9L4f/2025-03-03-095187-2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/25dRrMpY/IMG-20240814-203307-079.webp" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/rmhHpLQB/sonic.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/jdhMqT2Z/akibaby.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/3xJndqD7/unit2.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/Wpg9KgvR/pt-table.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/pXv0trWm/robocop2-1.jpg" onclick="openLightbox(this)">
+    <img src="https://i.postimg.cc/2y9FvkWD/458772502-404144295711352-7414219794713332660-n.jpg" onclick="openLightbox(this)">
+  </div>
+  
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded">
+  </div>
+  
+  
+</body>
+    
+</html>

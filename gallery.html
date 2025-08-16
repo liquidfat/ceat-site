@@ -28,6 +28,9 @@
       nav.classList.toggle('active');
       }
       
+      let currentIndex = 0; // track which image is open
+      let images = []; // store all gallery images
+      
       function openLightbox(imgElement) {
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
@@ -51,11 +54,12 @@
   
   <ul class="gallnav" id="navMenu">
       <li><a href="gallery.html" style="color: #ff0077;">photos</a></li>
+      <li><a href="art.html">art</a></li>
       <li><a href="video.html">video</a></li>
       <li><a href="archive.html">archive</a></li>
   </ul>   
   
-  <p>my photos - click photos to enlarge</p>
+  <p>click photos to enlarge</p>
   
   
    <div class="image-grid">
