@@ -209,8 +209,8 @@ td {
 .lightbox video{
   display: none;
   width: 80%;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 100vw;
+  max-height: 100vh;
   object-fit: contain;
   margin: 0;
   padding: 0;
@@ -219,8 +219,8 @@ td {
 .lightbox img{
   display: block;
   width: 80%;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 100vw;
+  max-height: 100vh;
   object-fit: contain;
   margin: 0;
   padding: 0;
