@@ -27,6 +27,34 @@
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
       }
+      function openLightbox(element) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxVideo = document.getElementById("lightbox-video");
+
+      if (element.tagName === "IMG") {
+        lightboxImg.src = element.src;
+        lightboxImg.style.display = "block";
+        lightboxVideo.style.display = "none";
+        lightboxVideo.pause();
+      } else if (element.tagName === "VIDEO") {
+        lightboxVideo.src = element.src;
+        lightboxVideo.style.display = "block";
+        lightboxImg.style.display = "none";
+        lightboxVideo.play();
+      }
+
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxVideo = document.getElementById("lightbox-video");
+
+      lightbox.style.display = "none";
+      lightboxVideo.pause();
+    }
+      
     </script>  
     
     <!-- Navigation links -->
@@ -45,10 +73,25 @@
       <li><a href="archive.html">archive</a></li>
     </ul>
    
-  <p style="text-align: center; color:white ">UNDER CONSTRUCTION</p>
+  <p style="text-align: center; color:white ">click video to play</p>
     
-  <img src="images/archive/digdug.jpg">
   
+  
+  <div class="image-grid">
+    <video src="https://i.imgur.com/Nh2wXfk.mp4" poster="https://i.postimg.cc/XNsn5JVt/peggle-anam.png" onclick="openLightbox(this)"></video>
+    <video src="https://i.imgur.com/fv37Qyi.mp4" poster="https://i.postimg.cc/d18KDs5N/lostbut-thumb.png" onclick="openLightbox(this)"></video>
+    <video src="https://i.imgur.com/RpmqOrg.mp4" poster="https://i.postimg.cc/HkVDX4Sy/mstandard-thumb.png" onclick="openLightbox(this)"></video>
+    <video src="https://i.imgur.com/MvsAOzO.mp4" poster="https://i.postimg.cc/Yq2wqwY8/miami-thumb.png" onclick="openLightbox(this)"></video>
+    <video src="https://i.imgur.com/UGTwXWe.mp4" poster="https://i.postimg.cc/sxsChk8j/bythesea-thumb.png" onclick="openLightbox(this)"></video>
+    <video src="https://i.imgur.com/WRwUcn0.mp4" poster="https://i.postimg.cc/RFncjFMF/xtal-thumb.png" onclick="openLightbox(this)"></video>
+    <video src="https://i.imgur.com/h4l4nYq.mp4" poster="https://i.postimg.cc/D06kdCkq/ahhh-thumb.png" onclick="openLightbox(this)"></video>
+
+  </div>
+    
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded">
+    <video id="lightbox-video" controls></video>
+  </div>
   
 </body>
     
