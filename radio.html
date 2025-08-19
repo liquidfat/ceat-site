@@ -28,16 +28,35 @@
       nav.classList.toggle('active');
       }
       
-      const audio = document.getElementById('radioStream');
-      const playBtn = document.getElementById('playBtn');
-      const pauseBtn = document.getElementById('pauseBtn');
-      const volumeSlider = document.getElementById('volume');
+      
+    async function checkStreamStatus() {
+    const img = document.getElementById('radioGif');
+    const statusUrl = 'https://sapircaster.fm:12993/admin/publicstats.json';
 
-      playBtn.addEventListener('click', () => audio.play());
-      pauseBtn.addEventListener('click', () => audio.pause());
-      volumeSlider.addEventListener('input', () => {
-      audio.volume = volumeSlider.value;
-    });
+    try {
+      const response = await fetch(statusUrl);
+      if (!response.ok) throw new Error('Network response not OK');
+
+      const stats = await response.json();
+      const sourceKey = Object.keys(stats[1].source)[0];
+      const sourceData = stats[1].source[sourceKey];
+
+      // If there are >0 listeners OR a streaming start time, consider it live
+      if (sourceData.listeners > 0 || sourceData.stream_start_iso8601) {
+        img.src = 'images/gifs/radio.gif';   // Live GIF
+      } else {
+        img.src = 'images/archive/ancient.jpg'; // Offline GIF
+      }
+    } catch (err) {
+      console.error('Stream status check failed:', err);
+      img.src = 'images/archive/ancient.jpg'; // Default fallback
+    }
+  }
+
+  // Initial check and periodic updates
+  checkStreamStatus();
+  setInterval(checkStreamStatus, 30000); // every 30 seconds
+      
     </script>  
     
     <!-- Navigation links -->
@@ -61,7 +80,7 @@
     <div class="col2">
       <div class="radio">
         <div data-type="newStreamPlayer" data-publicToken="e3056f6f-039e-438c-b24c-a9bdcf5f9bbc" data-theme="dark" data-color="0016FF" data-channelId="" data-rendered="false" class="cstrEmbed"><a href="https://www.caster.fm">Shoutcast Hosting</a> <a href="https://www.caster.fm">Stream Hosting</a> <a href="https://www.caster.fm">Radio Server Hosting</a></div><script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
-        <img class="radiogif" src="images/gifs/radio.gif">
+        <img id="radioGif" class="radiogif" src="images/archive/ancient.jpg" alt="Radio status">
       </div>
       
     </div>
