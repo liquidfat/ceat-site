@@ -31,7 +31,7 @@
       
     async function checkStreamStatus() {
     const img = document.getElementById('radioGif');
-    const statusUrl = 'https://sapircaster.fm:12993/admin/publicstats.json';
+    const statusUrl = 'https://sapircast.caster.fm:12993/admin/publicstats.json';
 
     try {
       const response = await fetch(statusUrl);
@@ -45,17 +45,17 @@
       if (sourceData.listeners > 0 || sourceData.stream_start_iso8601) {
         img.src = 'images/gifs/radio.gif';   // Live GIF
       } else {
-        img.src = 'images/archive/ancient.jpg'; // Offline GIF
+        img.src = 'images/archive/radio-offline.jpg'; // Offline img
       }
     } catch (err) {
       console.error('Stream status check failed:', err);
-      img.src = 'images/archive/ancient.jpg'; // Default fallback
+      img.src = 'images/archive/radio-offline.jpg'; // Default fallback
     }
   }
 
   // Initial check and periodic updates
   checkStreamStatus();
-  setInterval(checkStreamStatus, 30000); // every 30 seconds
+  setInterval(checkStreamStatus, 20000); // every 30 seconds
       
     </script>  
     
