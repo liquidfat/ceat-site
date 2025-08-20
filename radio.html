@@ -57,42 +57,7 @@
           checkStreamStatus();
           setInterval(checkStreamStatus, 10000); // every 10 seconds
 
-          async function updateNowPlaying() {
-      try {
-        // Step 1: Fetch current track from your Caster.fm JSON
-        const statusUrl = "https://sapircast.caster.fm:12993/admin/publicstats.json"; 
-        const response = await fetch(statusUrl);
-        const data = await response.json();
-
-        // Adjust depending on your JSON structure
-        const sourceKey = Object.keys(data[1].source)[0];
-        const currentSong = data[1].source[sourceKey].title || "Unknown Track";
-
-        document.getElementById("trackInfo").textContent = currentSong;
-
-        // Step 2: Search iTunes for album artwork
-        const searchUrl = "https://itunes.apple.com/search?term=" + encodeURIComponent(currentSong) + "&entity=song&limit=1";
-        const itunesResponse = await fetch(searchUrl);
-        const itunesData = await itunesResponse.json();
-
-        if (itunesData.results.length > 0) {
-          const artwork = itunesData.results[0].artworkUrl100.replace("100x100", "300x300");
-          document.getElementById("albumArt").src = artwork;
-        } else {
-          document.getElementById("albumArt").src = "images/archive/ancient.jpg"; // fallback
-        }
-
-      } catch (err) {
-        console.error("Now Playing update failed:", err);
-        document.getElementById("trackInfo").textContent = "Offline / No track info";
-        document.getElementById("albumArt").src = "images/archive/ancient.jpg";
-      }
-    }
-
-    // Initial fetch and periodic updates
-    updateNowPlaying();
-    setInterval(updateNowPlaying, 5000); // every 20 seconds
-      
+         
     </script>  
     
     <!-- Navigation links -->
@@ -123,10 +88,6 @@
       
   </div>
   
-  <div class="now-playing">
-  <p id="trackInfo">Loading current track...</p>
-  <img id="albumArt" src="images/archive/ancient.jpg" alt="Album Art" width="300">
-</div>
 
 >
 
