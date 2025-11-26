@@ -131,7 +131,7 @@ header{
 /*HOME GIFS*/
 .image-container {
     width: 80%;
-    margin: 7% 10% 0% 10%;
+    margin: 3% 10% 0% 10%;
     overflow: hidden;        /* This hides any part of the image that overflows */
     position: relative;
     z-index: 999;
