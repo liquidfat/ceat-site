@@ -49,6 +49,14 @@ p{
   margin-right: 10%;
 }
 
+pre{
+  font-size: 15px;
+  color: white;
+  margin-bottom: 30px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
 /*HEADER AND NAV BAR*/
 header{
     margin: 20px 0px 30px 40px;
