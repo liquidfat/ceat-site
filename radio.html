@@ -88,46 +88,43 @@
     </div>
       
   </div>
+
+    <div id="audio-player">
+    <button id="play-btn"></button>
+
+    <div id="progress-container">
+      <div id="progress"></div>
+    </div>
+
+    <audio id="audio" src="Audio/06 mutant standard.mp3"></audio>
+    </div>
+
   
-  <div id="audio-player">
-  <button id="play-btn"></button>
+<script>
+const player = document.getElementById("audio-player");
 
-  <div id="progress-container">
-    <div id="progress"></div>
-  </div>
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
 
-  <audio id="audio" src="Audio/06 mutant standard.mp3"></audio>
-  </div>
-  
-  <script>
-    const player = document.getElementById("audio-player");
-    const handle = document.getElementById("drag-handle");
+player.addEventListener("pointerdown", (e) => {
+  isDragging = true;
+  offsetX = e.clientX - player.offsetLeft;
+  offsetY = e.clientY - player.offsetTop;
+  player.style.cursor = "grabbing";
+});
 
-    let isDragging = false;
-    let offsetX, offsetY;
+document.addEventListener("pointermove", (e) => {
+  if (!isDragging) return;
+  player.style.left = (e.clientX - offsetX) + "px";
+  player.style.top = (e.clientY - offsetY) + "px";
+});
 
-    handle.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      offsetX = e.clientX - player.offsetLeft;
-      offsetY = e.clientY - player.offsetTop;
-      handle.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-
-      player.style.left = e.clientX - offsetX + "px";
-      player.style.top = e.clientY - offsetY + "px";
-    });
-
-    document.addEventListener("mouseup", () => {
-      isDragging = false;
-      handle.style.cursor = "grab";
-    });
+document.addEventListener("pointerup", () => {
+  isDragging = false;
+  player.style.cursor = "grab";
+});
 </script>
-  
-
-<script src="audioplay.js"></script>
 
 </body>
     
