@@ -129,7 +129,29 @@ document.addEventListener("pointerup", () => {
 });
 </script>
   
-<script>src="audioplay.js"</script>
+  
+  
+<script>
+  
+const audio = document.getElementById("audio");
+const playBtn = document.getElementById("play-btn");
+const progress = document.getElementById("progress");
+
+playBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    playBtn.style.backgroundImage = "url('../images/Play Button.png')";
+  } else {
+    audio.pause();
+    playBtn.style.backgroundImage = "url('../images/Pause Button.png')";
+  }
+});
+
+audio.addEventListener("timeupdate", () => {
+  const percent = (audio.currentTime / audio.duration) * 100;
+  progress.style.width = percent + "%";
+});
+  </script>
 
 </body>
     
