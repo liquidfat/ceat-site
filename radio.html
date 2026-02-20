@@ -74,9 +74,9 @@
   <div class="row">
   
     <div class="col2">
-    <div class="chat">
-        <script id="cid0020000415294015084" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js">{"handle":"ceatfun","arch":"js","styles":{"a":"ff0077","b":100,"c":"000000","d":"000000","k":"ff0077","l":"ff0077","m":"ff0077","p":"10","q":"ff0077","r":100,"t":0,"usricon":0,"surl":0}}</script>
-    </div>
+        <div class="chat">
+          <script id="cid0020000415294015084" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js">{"handle":"ceatfun","arch":"js","styles":{"a":"ff0077","b":100,"c":"000000","d":"000000","k":"ff0077","l":"ff0077","m":"ff0077","p":"10","q":"ff0077","r":100,"t":0,"usricon":0,"surl":0}}</script>
+      </div>
     </div>
     
     <div class="col2">
@@ -89,8 +89,45 @@
       
   </div>
   
+  <div id="audio-player">
+  <button id="play-btn"></button>
 
->
+  <div id="progress-container">
+    <div id="progress"></div>
+  </div>
+
+  <audio id="audio" src="Audio/1.06 Mutant Standard.flac"></audio>
+  </div>
+  
+  <script>
+    const player = document.getElementById("audio-player");
+    const handle = document.getElementById("drag-handle");
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    handle.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      offsetX = e.clientX - player.offsetLeft;
+      offsetY = e.clientY - player.offsetTop;
+      handle.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+
+      player.style.left = e.clientX - offsetX + "px";
+      player.style.top = e.clientY - offsetY + "px";
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      handle.style.cursor = "grab";
+    });
+</script>
+  
+
+<script src="audioplay.js"></script>
 
 </body>
     
