@@ -71,15 +71,7 @@
     
   <p>UNDER CONSTRUCTION</p>
   
-  <div id="audio-player">
-      <button id="play-btn"></button>
 
-      <div id="progress-container">
-        <div id="progress"></div>
-      </div>
-
-      <audio id="audio" src="Audio/all%20i%20wanna.mp3"></audio>
-      </div>
   
   <div class="row">
   
@@ -100,58 +92,27 @@
     </div>
       
   </div>
+  
+
+  
+  <div class="playerdiv">
+  
+    <audio id="player"><source src="Audio/Scary%20files%20vol%201_mixdown.mp3" type="audio/mp3"></audio>
+
+    <div id="audio-player"> 
+
+    </div>
+    
+    <button onclick="document.getElementById('player').play()">Play</button> 
+      <button onclick="document.getElementById('player').pause()">Pause</button> 
+      <button onclick="document.getElementById('player').volume += 0.1">Vol +</button> 
+      <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button> 
+  
+  </div>
 
 
   
-<script>
-const player = document.getElementById("audio-player");
 
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
-
-player.addEventListener("pointerdown", (e) => {
-  isDragging = true;
-  offsetX = e.clientX - player.offsetLeft;
-  offsetY = e.clientY - player.offsetTop;
-  player.style.cursor = "grabbing";
-});
-
-document.addEventListener("pointermove", (e) => {
-  if (!isDragging) return;
-  player.style.left = (e.clientX - offsetX) + "px";
-  player.style.top = (e.clientY - offsetY) + "px";
-});
-
-document.addEventListener("pointerup", () => {
-  isDragging = false;
-  player.style.cursor = "grab";
-});
-</script>
-  
-  
-  
-<script>
-  
-const audio = document.getElementById("audio");
-const playBtn = document.getElementById("play-btn");
-const progress = document.getElementById("progress");
-
-playBtn.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-    playBtn.style.backgroundImage = "url('../images/Pause Button.png')";
-  } else {
-    audio.pause();
-    playBtn.style.backgroundImage = "url('../images/Play Button.png')";
-  }
-});
-
-audio.addEventListener("timeupdate", () => {
-  const percent = (audio.currentTime / audio.duration) * 100;
-  progress.style.width = percent + "%";
-});
-  </script>
 
 </body>
     
