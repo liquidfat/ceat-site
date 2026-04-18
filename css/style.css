@@ -295,6 +295,15 @@ td {
     height: auto;
     flex-direction: column; /* stack inside each col if needed */
   }
+  
+  .playerdiv {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #audio-player{
+    width: 90%;
+  }
 }
 
 /*AUDIO PLAYER*/
@@ -306,11 +315,20 @@ td {
 }
 
 #audio-player {
+  justify-content: center;
+  align-items: center;
   border:ridge 10px white;
   display: flex;
   width: 50%;
   height: 220px;
-  background: url("../images/sf%20vol%201.jpg") no-repeat center/cover;
+  background: url("../images/terminclub.gif") no-repeat center/cover;
+}
+
+.playbut{
+  width: 100px;
+  height: 100px;
+  background: url("../images/Play%20Button.png") no-repeat center/cover;
+
 }
 
 
