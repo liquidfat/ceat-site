@@ -314,7 +314,7 @@ td {
   margin: 5%;
 }
 
-#audio-player {
+#audio-player1 {
   justify-content: center;
   align-items: center;
   border:ridge 10px white;
@@ -322,6 +322,16 @@ td {
   width: 50%;
   height: 220px;
   background: url("../images/terminclub.gif") no-repeat center/cover;
+}
+
+#audio-player2{
+  justify-content: center;
+  align-items: center;
+  border:ridge 10px white;
+  display: flex;
+  width: 50%;
+  height: 220px;
+  background: url("../images/sewer-jew-sewer.gif") no-repeat center/cover;
 }
 
 .playbut{
